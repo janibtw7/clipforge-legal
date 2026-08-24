@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ClipForge Terms of Service</title>
+<style>
+  :root {
+    --bg: #faf9fc;
+    --surface: #ffffff;
+    --border: #e7e3ef;
+    --ink: #18161f;
+    --ink-muted: #6b6675;
+    --ink-faint: #9691a0;
+    --accent: #7c4fe0;
+    --accent-2: #d6357d;
+    --accent-soft: #f1ecfc;
+    --code-bg: #f4f1fa;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0a0a0e;
+      --surface: #131318;
+      --border: #26262f;
+      --ink: #eceef1;
+      --ink-muted: #9491a0;
+      --ink-faint: #6d6a78;
+      --accent: #8b5cf6;
+      --accent-2: #ec4899;
+      --accent-soft: rgba(139, 92, 246, 0.14);
+      --code-bg: #1a1a22;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0a0a0e;
+    --surface: #131318;
+    --border: #26262f;
+    --ink: #eceef1;
+    --ink-muted: #9491a0;
+    --ink-faint: #6d6a78;
+    --accent: #8b5cf6;
+    --accent-2: #ec4899;
+    --accent-soft: rgba(139, 92, 246, 0.14);
+    --code-bg: #1a1a22;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { color-scheme: light dark; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .frame {
+    max-width: 1040px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 200px minmax(0, 700px);
+    gap: 56px;
+    padding: 64px 28px 100px;
+  }
+  @media (max-width: 860px) {
+    .frame { grid-template-columns: 1fr; padding: 40px 20px 72px; gap: 32px; }
+    nav.toc { display: none; }
+  }
+
+  header.doc-head {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    padding-bottom: 28px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: var(--ink-muted);
+  }
+  .brand .mark {
+    width: 22px; height: 22px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    flex-shrink: 0;
+  }
+  .doc-dates {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+    text-align: right;
+  }
+
+  nav.toc {
+    position: sticky;
+    top: 48px;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 13px;
+  }
+  nav.toc .toc-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+  }
+  nav.toc a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    padding: 5px 0 5px 12px;
+    border-left: 2px solid var(--border);
+    line-height: 1.4;
+  }
+  nav.toc a:hover { color: var(--ink); border-left-color: var(--ink-faint); }
+
+  main { min-width: 0; }
+
+  .kicker {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(32px, 5vw, 44px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .lede {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    margin: 0 0 44px;
+    max-width: 62ch;
+  }
+
+  section.clause { margin-bottom: 40px; scroll-margin-top: 32px; }
+  section.clause h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 21px;
+    font-weight: 600;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin: 0 0 14px;
+  }
+  section.clause h2 .num {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  section.clause p, section.clause li {
+    font-size: 15.5px;
+    line-height: 1.68;
+    color: var(--ink);
+    max-width: 65ch;
+  }
+  section.clause p { margin: 0 0 14px; }
+  section.clause ul { margin: 0 0 14px; padding-left: 22px; }
+  section.clause li { margin-bottom: 8px; }
+  section.clause li::marker { color: var(--ink-faint); }
+  section.clause strong { font-weight: 600; }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0 0 14px;
+  }
+  .callout strong { color: var(--accent); }
+
+  footer.doc-foot {
+    grid-column: 1 / -1;
+    margin-top: 20px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+  footer.doc-foot a { color: var(--ink-muted); }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+  rel="stylesheet"
+/>
+</head>
+<body>
+<div class="frame">
+  <header class="doc-head">
+    <div class="brand"><span class="mark"></span> ClipForge</div>
+    <div class="doc-dates">Effective &amp; last updated: August 2026</div>
+  </header>
+
+  <nav class="toc" aria-label="Sections">
+    <div class="toc-label">On this page</div>
+    <a href="#who">1. Who this covers</a>
+    <a href="#what-it-does">2. What ClipForge does</a>
+    <a href="#your-responsibility">3. Content responsibility</a>
+    <a href="#connected-platforms">4. Connected platforms</a>
+    <a href="#no-warranty">5. No warranty</a>
+    <a href="#liability">6. Liability</a>
+    <a href="#termination">7. Termination</a>
+    <a href="#changes">8. Changes</a>
+    <a href="#contact">9. Contact</a>
+  </nav>
+
+  <main>
+    <p class="kicker">Terms of Service</p>
+    <h1>Terms for using ClipForge</h1>
+    <p class="lede">
+      ClipForge is a personal, self-hosted tool with exactly one operator. These terms exist
+      because the platforms it connects to require a link to them &mdash; there's no sign-up
+      flow or public offering behind this page.
+    </p>
+
+    <section class="clause" id="who">
+      <h2><span class="num">1</span>Who this covers</h2>
+      <p>
+        These terms are between the operator of this ClipForge instance and no one else.
+        ClipForge is not distributed, sold, or made available to other users. Where these terms
+        say "you," it means the operator.
+      </p>
+    </section>
+
+    <section class="clause" id="what-it-does">
+      <h2><span class="num">2</span>What ClipForge does</h2>
+      <p>
+        ClipForge downloads or accepts a video, transcribes it locally, splits it into short
+        vertical clips (either by picking highlights or by cutting the whole video into
+        sequential parts), burns in captions, and &mdash; only after the operator reviews and
+        approves a specific clip &mdash; publishes it to a connected platform such as YouTube or
+        TikTok.
+      </p>
+    </section>
+
+    <section class="clause" id="your-responsibility">
+      <h2><span class="num">3</span>Content responsibility</h2>
+      <div class="callout">
+        The operator is solely responsible for confirming they hold the rights to any source
+        video before processing or publishing it. ClipForge does not verify ownership or
+        licensing on the operator's behalf.
+      </div>
+      <p>
+        ClipForge's trending-video suggestions are exactly that &mdash; suggestions. Nothing is
+        published automatically; the operator reviews and selects a source video, and separately
+        reviews and approves each individual clip before it's ever sent to a connected platform.
+      </p>
+    </section>
+
+    <section class="clause" id="connected-platforms">
+      <h2><span class="num">4</span>Connected platforms</h2>
+      <p>
+        Publishing through a connected platform also means agreeing to that platform's own terms:
+      </p>
+      <ul>
+        <li><strong>YouTube</strong> &mdash; Google's Terms of Service and the YouTube Terms of Service.</li>
+        <li><strong>TikTok</strong> &mdash; TikTok's Terms of Service and Developer Agreement.</li>
+      </ul>
+      <p>ClipForge's own terms don't override or limit those.</p>
+    </section>
+
+    <section class="clause" id="no-warranty">
+      <h2><span class="num">5</span>No warranty</h2>
+      <p>
+        ClipForge is provided as-is, with no warranty of any kind &mdash; including that
+        transcription, clip selection, or rendering will be accurate, or that any connected
+        platform's API will remain available or unchanged.
+      </p>
+    </section>
+
+    <section class="clause" id="liability">
+      <h2><span class="num">6</span>Liability</h2>
+      <p>
+        The operator assumes full responsibility for any content processed or published through
+        this tool, and for compliance with every connected platform's policies. ClipForge itself
+        carries no liability beyond what's legally impossible to disclaim.
+      </p>
+    </section>
+
+    <section class="clause" id="termination">
+      <h2><span class="num">7</span>Termination</h2>
+      <p>
+        The operator may stop using ClipForge, or disconnect any platform integration, at any
+        time. Since there are no other users, there's no separate account-termination process to
+        describe.
+      </p>
+    </section>
+
+    <section class="clause" id="changes">
+      <h2><span class="num">8</span>Changes</h2>
+      <p>
+        These terms may be updated as ClipForge's functionality changes. Updates take effect as
+        soon as they're posted here.
+      </p>
+    </section>
+
+    <section class="clause" id="contact">
+      <h2><span class="num">9</span>Contact</h2>
+      <p>
+        Reach the operator through the Google or TikTok developer account under which this
+        application is registered.
+      </p>
+    </section>
+  </main>
+
+  <footer class="doc-foot">
+    <span>ClipForge &mdash; personal, single-user instance</span>
+    <a href="./privacy-policy.html">See also: Privacy Policy &rarr;</a>
+  </footer>
+</div>
+</body>
+</html>
